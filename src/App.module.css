@@ -1,0 +1,44 @@
+/* Контейнер всей страницы */
+.page {
+    background: #f5f7fa;
+    min-height: 100%;
+  }
+  
+  /* Универсальные секции — одинаковые поля */
+  section {
+    padding: 40px 0;
+  }
+  
+  /* Герой-блок */
+  #hero {
+    background: linear-gradient(135deg, #eef3ff 0%, #ffffff 65%);
+  }
+  
+  /* Секция «Лучшие банки» */
+  #best {
+    background: #fff;
+  }
+  
+  /* Секция «Калькулятор» */
+  #calculator {
+    background: #f8fafc;
+  }
+  
+  /* Секция «Рейтинг» (если используешь отдельно) */
+  #rating {
+    background: #fff;
+  }
+  
+  /* Адаптивные вертикальные поля секций */
+  @media (max-width: 900px) {
+    section {
+      padding: 28px 0;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    section {
+      padding: 22px 0;
+    }
+  }
+  

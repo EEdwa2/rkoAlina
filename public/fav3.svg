@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
+    font-size="460"
+    fill="#3B82F6">
+    ₽
+  </text>
+</svg>

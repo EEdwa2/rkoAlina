@@ -1,0 +1,73 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffffcc;           /* лёгкая прозрачность для эффекта */
+  backdrop-filter: saturate(160%) blur(8px);
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  /* padding: 6px 8px; */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.04s ease;
+}
+
+.logo:hover { background: #f2f4f7; }
+.logo:active { transform: translateY(1px); }
+
+.brand {
+  font-weight: 800;
+  font-size: 18px;
+  color: #1b1f24;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  border: 0;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a5568;         /* нейтрально-серый */
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.04s ease;
+}
+
+.link:hover {
+  background: #eef2f7;
+  color: #111827;
+}
+
+.link:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 10px 16px; }
+  .brand { display: none; }       /* компактнее на мобиле */
+  .link { padding: 8px 10px; }
+}

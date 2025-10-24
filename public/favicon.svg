@@ -1,0 +1,20 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(128,128)">
+    <text
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
+      font-size="177.6"
+      fill="none"
+      stroke="#3B82F6"
+      stroke-width="0.065em"
+      stroke-linejoin="round"
+      paint-order="stroke fill">₽</text>
+    <text
+      text-anchor="middle"
+      dominant-baseline="central"
+      font-family="Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
+      font-size="177.6"
+      fill="#3B82F6">₽</text>
+  </g>
+</svg>

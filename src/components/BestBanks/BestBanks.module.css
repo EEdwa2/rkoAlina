@@ -1,0 +1,99 @@
+/* ===== Лучшие банки (карточки) ===== */
+
+.section {
+  padding: 48px 0;
+  background: #f6f8fb;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;            /* ← одинаковые поля от краёв экрана */
+}
+
+.headingWrap { margin-bottom: 24px; }
+.heading {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 900;
+  color: #111;
+}
+.sub {
+  margin: 0;
+  color: #667084;
+  font-size: 15px;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.section{padding:40px 0}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Карточка банка (поля внутри — чтобы кнопка не липла к краю) */
+.card {
+  background: #fff;
+  border: 1px solid #eef1f5;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(31,45,61,.06);
+  padding: 18px;              /* ← внутренние отступы */
+  display: grid;
+  row-gap: 14px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  column-gap: 14px;
+  align-items: center;
+}
+
+.logo {
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: #f5f7fa;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 1px #e7ebf0;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1b1f24;
+}
+
+.features {
+  margin: 0;
+  padding-left: 18px;
+  color: #5b6572;
+  font-size: 15px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  border-radius: 12px;
+  background: #2F80ED;
+  color: #fff;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  transition: filter .15s ease, transform .04s ease;
+}
+.button:hover { filter: brightness(1.05); }
+.button:active { transform: translateY(1px); }
+
+@media (max-width: 900px) {
+  .section { padding: 32px 0; }
+  .grid { grid-template-columns: 1fr; }
+}

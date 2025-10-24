@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="400" viewBox="0 0 590 400">
+  <!-- Фон -->
+  <rect x="0" y="0" width="590" height="400" rx="60" fill="#EEF5FF"/>
+
+  <defs>
+    <style>
+      .rub { font: 380px/1 Inter, Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+      .ko  { font: 190px/1 Inter, Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- ₽ со скруглением (нижний отступ ~вдвое меньше) -->
+  <text x="40" y="335"
+        class="rub"
+        text-anchor="start"
+        alignment-baseline="alphabetic"
+        fill="none"
+        stroke="#3B82F6"
+        stroke-width="0.024em"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        paint-order="stroke fill">₽</text>
+  <text x="40" y="335"
+        class="rub"
+        text-anchor="start"
+        alignment-baseline="alphabetic"
+        fill="#3B82F6">₽</text>
+
+  <!-- «ко» ближе к ₽ (x=230), на той же линии -->
+  <text x="230" y="335"
+        class="ko"
+        text-anchor="start"
+        alignment-baseline="alphabetic"
+        fill="#3B82F6">ко</text>
+</svg>
+

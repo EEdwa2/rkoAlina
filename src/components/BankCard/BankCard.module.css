@@ -1,0 +1,84 @@
+/* ===== Карточка банка ===== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background: var(--white);
+  border: 1px solid #E6E9EF;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  padding: 20px;
+  min-height: 100%;
+}
+
+/* Шапка: логотип + название */
+.top {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: center;
+  column-gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Обёртка под логотип как в Rating */
+.logoWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #f5f7fa;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #e7ebf0;
+}
+
+/* Сам логотип */
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Заголовок */
+.title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  color: #1b1f24;
+  line-height: 1.15;
+}
+
+.plan {
+  font-weight: 600;
+  color: #2c2f36;
+}
+
+/* Буллеты: растягиваем среднюю часть, чтобы CTA ушёл вниз */
+.features {
+  flex: 1;
+  margin: 0 0 16px 0;
+  padding: 0 0 0 20px; /* маркерный отступ */
+  color: #5b6572;
+  font-size: 15px;
+}
+
+.features li {
+  margin: 8px 0;
+}
+
+/* Контейнер для кнопки — всегда у нижней кромки */
+.cta {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* На мобильном — чуть компактнее */
+@media (max-width: 900px) {
+  .card { padding: 16px; }
+  .title { font-size: 18px; }
+  .features { font-size: 14px; }
+}
