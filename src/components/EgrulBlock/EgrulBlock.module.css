@@ -1,0 +1,87 @@
+/* Секция – отступы и фон страницы */
+.section {
+  background: #f7f9fc;
+  padding: 56px 20px;
+}
+
+/* Ограничение ширины как в остальных блоках */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовок секции */
+.title {
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #111827; /* почти чёрный, как в других блоках */
+}
+
+/* Подзаголовок/описание (серый текст) */
+.subtitle {
+  margin: 0 0 18px;
+  color: #6b7280; /* серый как у подписи в калькуляторе */
+  font-size: 16px;
+}
+
+/* Карточка с белым фоном */
+.card {
+  background: #fff;
+  border: 1px solid #e6eaf2;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+}
+
+/* Внутренности карточки */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Маркированный список преимуществ */
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: #374151;
+}
+.list li { margin: 6px 0; }
+
+/* Зона кнопки */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* CTA-кнопка */
+.primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #2f6feb;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid #2f6feb;
+  transition: background .15s ease, transform .04s ease;
+}
+.primary:hover { background: #1f5be6; }
+.primary:active { transform: translateY(1px); }
+
+.note {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .section { padding: 44px 16px; }
+  .title { font-size: 28px; }
+  .card { padding: 20px; border-radius: 16px; }
+}
