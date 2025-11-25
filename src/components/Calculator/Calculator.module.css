@@ -13,6 +13,9 @@
   padding: 0 24px;
 }
 
+.sub { margin: 0 0 18px; color: var(--muted); }
+.sub[role="note"] { margin-top: 14px; }
+
 .heading{
   margin: 0 0 6px;
   font-size: 32px;

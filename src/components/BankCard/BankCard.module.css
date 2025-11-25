@@ -1,84 +1,139 @@
-/* ===== Карточка банка ===== */
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  background: var(--white);
-  border: 1px solid #E6E9EF;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-
-  padding: 20px;
-  min-height: 100%;
+.section {
+  padding: 48px 0;
+  background: #f6f8fb;
 }
 
-/* Шапка: логотип + название */
-.top {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  align-items: center;
-  column-gap: 12px;
-  margin-bottom: 12px;
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Обёртка под логотип как в Rating */
-.logoWrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: #f5f7fa;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px #e7ebf0;
-}
-
-/* Сам логотип */
-.logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-/* Заголовок */
 .title {
-  margin: 0;
-  font-weight: 800;
-  font-size: 20px;
-  color: #1b1f24;
-  line-height: 1.15;
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 900;
+  color: #111827;
 }
 
-.plan {
-  font-weight: 600;
-  color: #2c2f36;
-}
-
-/* Буллеты: растягиваем среднюю часть, чтобы CTA ушёл вниз */
-.features {
-  flex: 1;
-  margin: 0 0 16px 0;
-  padding: 0 0 0 20px; /* маркерный отступ */
-  color: #5b6572;
+.subtitle {
+  margin: 0 0 24px;
+  color: #667084;
   font-size: 15px;
 }
 
-.features li {
-  margin: 8px 0;
+/* сетка карточек банков */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
 }
 
-/* Контейнер для кнопки — всегда у нижней кромки */
-.cta {
-  margin-top: auto;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* карточка банка */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e6e9ef;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  padding: 18px;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  row-gap: 12px;
 }
 
-/* На мобильном — чуть компактнее */
+/* шапка карточки: логотип + название */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* логотип — тот же размер, что и в рейтинге */
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px #e7ebf0;
+  overflow: hidden;
+}
+
+.logo img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* список буллетов-слоганов */
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: #5b6572;
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.listItem {
+  list-style: disc;
+}
+
+/* футер карточки с кнопкой */
+.cardFooter {
+  margin-top: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  background: #2f80ed;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.15s ease, transform 0.04s ease;
+}
+
+.button:hover {
+  filter: brightness(1.05);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
 @media (max-width: 900px) {
-  .card { padding: 16px; }
-  .title { font-size: 18px; }
-  .features { font-size: 14px; }
+  .section {
+    padding: 32px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

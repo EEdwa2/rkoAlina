@@ -1,61 +1,149 @@
-.section { padding: 40px 0; }
-
-.heading {
-  margin: 0 0 24px;
-  font-size: 28px;
-  font-weight: 800;
-  color: #111;
+/* Общий фон секции */
+.section {
+  padding: 48px 0;
+  background: #f6f8fb;
 }
 
-.list { display: grid; row-gap: 18px; }
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.subtitle {
+  margin: 8px 0 24px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Список строк рейтинга */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ОДНА строка рейтинга.
+   3 колонки:
+   1) банк
+   2) обслуживание (фиксированная зона)
+   3) кнопка */
 .row {
   display: grid;
-  grid-template-columns: 56px 1fr 220px 220px 220px 1fr;
-  gap: 16px;
+  grid-template-columns: minmax(0, 420px) minmax(260px, 1fr) auto;
   align-items: center;
-  background: #fff;
-  border: 1px solid #eef1f5;
-  border-radius: 16px;
-  padding: 16px 18px;
-  box-shadow: 0 6px 18px rgba(31,45,61,.06);
+  column-gap: 24px;
+
+  padding: 18px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
+/* Левая часть: логотип + названия */
+.bank {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Логотип банка — единый размер и фон */
 .logoWrap {
   width: 56px;
   height: 56px;
-  border-radius: 12px;
-  background: #f5f7fa;
+  border-radius: 18px;
+  background: #eff5ffc7; /* твой цвет фона */
   display: grid;
   place-items: center;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px #e7ebf0;
 }
 
-.logo { width: 36px; height: 36px; object-fit: contain; }
+.logoWrap img {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
 
-.colTitle { display: grid; row-gap: 6px; }
-.title { margin: 0; font-weight: 800; font-size: 20px; color: #1b1f24; }
-.plan { font-weight: 800; }
+/* Название банка и тарифа */
+.bankName {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+}
 
-.meta { color: #5b6572; font-size: 15px; }
+.tariffName {
+  margin-top: 2px;
+  font-size: 15px;
+  color: #6b7280;
+}
 
-.btnBox { display: flex; justify-content: flex-end; }
+/* Колонка "Обслуживание":
+   — ВСЕ строки начинаются в одной вертикали
+   — не переносим на 2 строку на десктопе */
+.service {
+  justify-self: flex-start;
+  white-space: nowrap;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.serviceLabel {
+  font-weight: 600;
+}
+
+.serviceValue {
+  font-weight: 700;
+}
+
+/* Кнопка "Подробнее" */
 .button {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 44px; padding: 0 18px; border-radius: 12px;
-  background: #2F80ED; color: #fff; font-weight: 800; border: none;
-  cursor: pointer; transition: filter .15s ease, transform .04s ease;
+  justify-self: flex-end;
+  padding: 0 28px;
+  min-height: 46px;
+  border-radius: 999px;
+  background: #2f80ed;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.15s ease, transform 0.04s ease;
 }
-.button:hover { filter: brightness(1.05); }
-.button:active { transform: translateY(1px); }
 
-/* адаптив */
-@media (max-width: 1200px) {
-  .row { grid-template-columns: 56px 1fr 180px 180px 180px 1fr; }
+.button:hover {
+  filter: brightness(1.05);
 }
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Адаптив: на мобильных всё в колонку,
+   "Обслуживание" уже можно переносить */
 @media (max-width: 900px) {
-  .row { grid-template-columns: 48px 1fr; row-gap: 10px; }
-  .btnBox, .meta { grid-column: 1 / -1; }
-  .button { width: 100%; }
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 10px;
+  }
+
+  .service {
+    justify-self: flex-start;
+    white-space: normal;
+    margin-left: 72px; /* чтобы визуально было под текстом банка */
+  }
+
+  .button {
+    justify-self: stretch;
+    width: 100%;
+  }
 }

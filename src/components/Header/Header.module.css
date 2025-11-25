@@ -1,4 +1,4 @@
-/* Шапка */
+
 .header {
   position: sticky;
   top: 0;
@@ -9,7 +9,6 @@
   box-shadow: 0 1px 0 rgba(17, 24, 39, 0.06);
 }
 
-/* Обёртка */
 .wrap {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,7 +19,6 @@
   box-sizing: border-box;
 }
 
-/* Лого */
 .logo {
   flex: 0 0 auto;
   display: inline-flex;
@@ -35,20 +33,19 @@
 .logo:hover { background: #f2f4f7; }
 .logo:active { transform: translateY(1px); }
 
-/* Навигация */
+
 .nav {
-  position: relative;            /* для .pill */
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 4px;
   border-radius: 12px;
-  white-space: nowrap;           /* всегда одна строка */
+  white-space: nowrap;           
   flex: 1 1 auto;
   min-width: 0;
 }
 
-/* Пилюля */
 .pill {
   position: absolute;
   top: 4px;
@@ -62,7 +59,6 @@
   z-index: 0;
 }
 
-/* Кнопки */
 .link {
   position: relative;
   display: inline-flex;
@@ -83,38 +79,35 @@
 .link:active { transform: translateY(1px); }
 .linkActive { color: #111827; }
 
-/* Иконки (по умолчанию — СКРЫТЫ на больших экранах) */
 .icon {
-  display: none;                 /* <- главное изменение */
+  display: none; 
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
   color: currentColor;
 }
-
-/* Текстовые варианты */
 .textFull { display: inline; }
 .textShort { display: none; }
 
-/* =========================
-   Адаптивные режимы без скролла
-   ========================= */
-
-/* ≤ 768px: показываем КОРОТКИЕ подписи + ВКЛючаем иконки */
 @media (max-width: 768px) {
   .wrap { padding: 10px 16px; }
-  .nav { gap: 6px; }
-  .link { padding: 6px 8px; font-size: 12px; gap: 6px; }
-  .icon { display: inline-block; width: 18px; height: 18px; flex-basis: 18px; } /* <- показать иконки */
+  .nav { gap: 6px;
+     justify-content: space-evenly; }  
+    /* без принудительного выравнивания */
+    /* исправил  padding: 6px 8px;*/
+  .link { padding: 6px 22px; font-size: 12px; gap: 6px; }
+  .icon { display: inline-block; width: 18px; height: 18px; flex-basis: 18px; }
 
   .textFull { display: none; }
-  .textShort { display: inline; } /* “Банки”, “Кальк.”, “ЕГРЮЛ” */
+  /* .textShort { display: inline; } */
 }
-
-/* ≤ 480px: только ИКОНКИ (никакого текста) */
 @media (max-width: 480px) {
   .wrap { padding: 10px 12px; }
-  .nav { gap: 6px; }
+  .nav {
+    gap: 6px;
+    justify-content: space-evenly;
+    width: 100%;
+  }
   .link { padding: 6px 8px; font-size: 0; }
   .icon { display: inline-block; width: 20px; height: 20px; flex-basis: 20px; }
 

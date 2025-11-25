@@ -1,0 +1,53 @@
+.card {
+  background: #eff5ffc7; /* твой цвет фона блока */
+  border-radius: 24px;
+  border: 1px solid #e6e9ef;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  padding: 20px 20px 24px;
+  margin-bottom: 24px;
+}
+
+/* шапка банка: логотип + название */
+.head {
+  display: flex;
+  align-items: flex-end; /* чтобы низ логотипа совпадал с началом блока тарифов */
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.logo img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 24px;
+  color: #111827;
+}
+
+/* сетка тарифов банка */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

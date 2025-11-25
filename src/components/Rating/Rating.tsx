@@ -1,57 +1,91 @@
+// src/components/BankRating/BankRating.tsx
+
 import s from "./Rating.module.css";
+import { getLogoSrc, getRefLink, type BankId } from "../../utils/bankLinks";
 
-import banksJson from "../../data/banks.json";
-import type { Bank } from "../../types/bank";
-import { getRefLink, type BankId } from "../../utils/bankLinks";
+type RatingRow = {
+  id: BankId;
+  bankName: string;
+  tariffName: string;
+  service: string;
+};
 
-const banks = banksJson as Bank[];
-const REF_TAIL = import.meta.env.VITE_REF ?? "";
+const rows: RatingRow[] = [
+  {
+    id: "alfa",
+    bankName: "Альфа-Банк",
+    tariffName: "Ноль за обслуживание",
+    service: "0 ₽",
+  },
+  {
+    id: "tinkoff",
+    bankName: "Т-Банк",
+    tariffName: "Простой",
+    service: "490 ₽",
+  },
+  {
+    id: "alfa",
+    bankName: "Альфа-Банк",
+    tariffName: "Простой",
+    service: "зависит от поступлений",
+  },
+  {
+    id: "tochka",
+    bankName: "Точка",
+    tariffName: "Начало",
+    service: "950 ₽",
+  },
+  {
+    id: "modulbank",
+    bankName: "Модульбанк",
+    tariffName: "Оптимальный",
+    service: "690 ₽",
+  },
+];
 
-export default function Rating() {
+export default function BankRating() {
   return (
-    <section className={s.section} id="rating">
-      <div className="container">
-        <h2 className={s.heading}>Рейтинг банков для ИП и ООО</h2>
+    <section className={s.section}>
+      <div className={s.inner}>
+        <h2 className={s.title}>Рейтинг банков для ИП и ООО</h2>
+        <p className={s.subtitle}>
+          Тарифы РКО, которые чаще всего выбирают посетители этого сайта.
+        </p>
 
         <div className={s.list}>
-          {banks.map((b) => {
-            const href = getRefLink(b.id as BankId, REF_TAIL);
-            const logoSrc = `/logos/${b.id}.svg`;
+          {rows.map((row) => {
+            const logo = getLogoSrc(row.id);
+            const link = getRefLink(row.id);
+
             return (
-              <div key={b.id} className={s.row}>
-                <div className={s.logoWrap}>
-                  {/* скрываем, если файла нет */}
-                  <img
-                    className={s.logo}
-                    src={logoSrc}
-                    alt={b.name}
-                    onError={(e) =>
-                      ((e.target as HTMLImageElement).style.display = "none")
-                    }
-                  />
+              <article key={`${row.id}-${row.tariffName}`} className={s.row}>
+                {/* Левая часть: логотип + названия */}
+                <div className={s.bank}>
+                  <div className={s.logoWrap}>
+                    <img src={logo} alt={row.bankName} />
+                  </div>
+                  <div>
+                    <div className={s.bankName}>{row.bankName}</div>
+                    <div className={s.tariffName}>{row.tariffName}</div>
+                  </div>
                 </div>
 
-                <div className={s.colTitle}>
-                  <p className={s.title}>
-                    {b.name} — <span className={s.plan}>{b.plan}</span>
-                  </p>
+                {/* Средняя колонка: обслуживание (жёсткий столбец) */}
+                <div className={s.service}>
+                  <span className={s.serviceLabel}>Обслуживание:</span>{" "}
+                  <span className={s.serviceValue}>{row.service}</span>
                 </div>
 
-                <div className={s.meta}>Обсл.: {b.fees.monthly} ₽</div>
-                <div className={s.meta}>Платёж: {b.fees.toOthers}</div>
-                <div className={s.meta}>Эквайринг: {b.fees.acquiring}</div>
-
-                <div className={s.btnBox}>
-                  <a
-                    className={s.button}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Открыть счёт
-                  </a>
-                </div>
-              </div>
+                {/* Правая колонка: кнопка */}
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.button}
+                >
+                  Подробнее
+                </a>
+              </article>
             );
           })}
         </div>

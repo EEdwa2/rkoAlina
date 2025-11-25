@@ -169,7 +169,7 @@ export default function Calculator() {
             <h3>Результат</h3>
 
             {!bank ? (
-              <div className={s.help}>Выберите банк слева.</div>
+              <div className={s.help}>Выберите банк.</div>
             ) : (
               <div className={s.result}>
                 <div className={s.row}>
@@ -217,6 +217,11 @@ export default function Calculator() {
             )}
           </div>
         </div>
+        <p className={s.sub} role="note">
+          Расчёты носят ориентировочный характер: точные условия и итоговые
+          суммы подтверждает банк; данные берутся из тарифов банка и могут
+          отличаться.
+        </p>
       </div>
     </section>
   );

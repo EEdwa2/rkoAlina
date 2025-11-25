@@ -1,0 +1,331 @@
+:root{
+  /* локальный максимум ширины для калькулятора */
+  --calc-maxw: 1080px;
+}
+
+/* секция */
+.section{
+  padding: 40px 0;
+}
+
+/* внутренняя обёртка */
+.inner{
+  max-width: var(--calc-maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* заголовки */
+.heading{
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sub{
+  margin: 0 0 24px;
+  max-width: 640px;
+  color: #5b6572;
+}
+
+/* карточка формы */
+.card{
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 24px 20px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.h3{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* переключатель ИП/ООО */
+.segment{
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  max-width: 360px;
+  margin-bottom: 24px;
+}
+
+.segbtn{
+  flex: 1 1 50%;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+}
+
+.segbtn:focus-visible{
+  outline: 2px solid #1d6bf3;
+  outline-offset: 2px;
+}
+
+.active{
+  background: #1d6bf3;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* Для Альфа "Простой": складываем dt и dd в колонку */
+.tariffMetaRowStack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.tariffMetaRowStack dd {
+  align-self: flex-start; /* прибиваем к левому краю */
+  margin-left: 0;         /* перебиваем margin-left: auto из базового стиля */
+  text-align: left;       /* на всякий случай */
+  width: auto;            /* чтобы не растягивался как колонка с цифрами */
+}
+/* сетка полей */
+.grid3{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.label{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.labelText{
+  font-weight: 600;
+  color: #374151;
+  min-height: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.inputWrap{
+  position: relative;
+}
+
+.inputWrap input{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 12px 40px 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.inputWrap input::placeholder{
+  color: #9ca3af;
+}
+
+.inputWrap input:focus{
+  border-color: #1d6bf3;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+.suffix{
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* кнопки */
+.actions{
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background: #1d6bf3;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btnDisabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.help{
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* список результатов */
+.list{
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* блок конкретного банка — общий фон для всех его тарифов */
+.listItem{
+  background: #f3f4f9;
+  border-radius: 28px;
+  padding: 18px 20px 22px;
+  margin-top: 20px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+/* заголовок банка с логотипом */
+.bankHeader{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.bankLogo{
+margin-left: 5px;
+    width: 38px;
+    height: 38px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  object-fit: contain;
+}
+
+.bankTitle{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+/* сетка тарифов банка */
+.tariffGrid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* карточка тарифа */
+.tariffCard{
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px 18px 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.03);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* шапка тарифа */
+.tariffHeader{
+  margin-bottom: 10px;
+}
+
+.tariffName{
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.tariffDescr{
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b7280;
+}
+
+/* данные по тарифу */
+.tariffMeta{
+  margin: 0 0 16px;
+  padding: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* строки с параметрами тарифа */
+.tariffMetaRow{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.tariffMetaRow + .tariffMetaRow{
+  margin-top: 4px;
+}
+
+.tariffMetaRow dt{
+  flex: 1 1 auto;
+  font-weight: 500;
+  min-width: 0;
+}
+
+.tariffMetaRow dd{
+  flex: 0 0 auto;
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* кнопка внутри карточки тарифа */
+.tariffActions{
+  margin-top: auto;
+}
+
+/* приписка внизу */
+.note{
+  margin-top: 14px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* адаптив */
+@media (max-width: 1100px){
+  .grid3{
+    grid-template-columns: 1fr 1fr;
+  }
+  .tariffGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px){
+  .grid3{
+    grid-template-columns: 1fr;
+  }
+  .heading{
+    font-size: 28px;
+  }
+  .segment{
+    max-width: 100%;
+  }
+  .tariffGrid{
+    grid-template-columns: 1fr;
+  }
+}
