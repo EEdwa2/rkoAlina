@@ -87,7 +87,7 @@ export default function CalculatorV2() {
   return (
     <section className={s.section} id="calculator">
       <div className={s.inner}>
-        <h2 className={s.heading}>Калькулятор стоимости (новая версия)</h2>
+        <h2 className={s.heading}>Калькулятор стоимости тарифов</h2>
         <p className={s.sub}>
           Укажите форму регистрации и примерные обороты. Ниже мы покажем
           ориентировочную стоимость обслуживания по тарифам разных банков.
@@ -116,7 +116,7 @@ export default function CalculatorV2() {
 
           <div className={s.grid3}>
             <label className={s.label}>
-              <span className={s.labelText}>Вывод денег на карту</span>
+              <span className={s.labelText}>Вывод денежных средств</span>
               <div className={s.inputWrap}>
                 <input
                   inputMode="numeric"
@@ -131,7 +131,7 @@ export default function CalculatorV2() {
 
             <label className={s.label}>
               <span className={s.labelText}>
-                Количество платежей другим юр. лицам
+                Количество платежных поручений
               </span>
               <div className={s.inputWrap}>
                 <input

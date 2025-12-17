@@ -52,9 +52,9 @@ export default function BestBanks() {
     <section className={s.section}>
       <div className={s.inner}>
         <div className={s.headingWrap}>
-          <h2 className={s.heading}>Основные банки — ноябрь 2025</h2>
+          <h2 className={s.heading}>Основные банки</h2>
           <p className={s.sub}>
-            Банки, тарифы расчётно-кассового обслуживания которых представлены
+            Тарифы банков для расчётно-кассового обслуживания которых представлены
             на этом сайте.
           </p>
         </div>
